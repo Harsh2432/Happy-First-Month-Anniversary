@@ -80,6 +80,13 @@
             box-shadow: inset 0 0 0 4px rgba(212, 175, 55, 0.12);
         }
 
+        /* Fit everything (header + card + buttons) inside the visible screen on mobile */
+        :root { --card-height: min(calc(100vh - 200px), 620px); }
+        @supports (height: 100dvh) {
+            :root { --card-height: min(calc(100dvh - 200px), 620px); }
+            body { min-height: 100dvh; }
+        }
+
         .scene {
             perspective: 2200px;
             width: 100%;
@@ -277,7 +284,7 @@
 
                         <div class="flex-1 grid grid-cols-2 gap-2.5 sm:gap-3 items-center my-2 px-1 overflow-hidden">
                             <!-- Polaroid 1 -->
-                            <div class="polaroid relative -rotate-2 cursor-pointer group" onclick="openLightbox('image', '1000301310_2.jpg', 'Little Mickyyy 🧸')">
+                            <div class="polaroid relative -rotate-2 cursor-pointer group" onclick="openLightbox('image', 'photo1.jpg', 'Little Mickyyy 🧸')">
                                 <div class="w-8 sm:w-11 h-2 sm:h-2.5 absolute -top-1 left-1/2 -translate-x-1/2 -rotate-2 z-10 washi-tape"></div>
                                 <div class="aspect-square w-full bg-parchment overflow-hidden relative flex items-center justify-center border border-blush/30">
                                     <img src="photo1.jpg" alt="Little Mickyyy" class="w-full h-full object-cover object-top">
@@ -286,7 +293,7 @@
                             </div>
 
                             <!-- Polaroid 2 -->
-                            <div class="polaroid relative rotate-2 cursor-pointer group" onclick="openLightbox('image', '1000293505_2.jpg', 'Cutest Fox in Shanghai 🦊')">
+                            <div class="polaroid relative rotate-2 cursor-pointer group" onclick="openLightbox('image', 'photo2.jpg', 'Cutest Fox in Shanghai 🦊')">
                                 <div class="aspect-square w-full bg-parchment overflow-hidden relative flex items-center justify-center border border-blush/30">
                                     <img src="photo2.jpg" alt="Cutest Fox in Shanghai" class="w-full h-full object-cover object-top">
                                 </div>
@@ -294,7 +301,7 @@
                             </div>
 
                             <!-- Polaroid 3 -->
-                            <div class="polaroid relative rotate-1 cursor-pointer group" onclick="openLightbox('video', 'video_1.mp4', 'My Favorite Smile ✨')">
+                            <div class="polaroid relative rotate-1 cursor-pointer group" onclick="openLightbox('video', 'video.mp4', 'My Favorite Smile ✨')">
                                 <div class="aspect-square w-full bg-parchment overflow-hidden relative flex items-center justify-center border border-blush/30">
                                     <video src="video.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
                                 </div>
@@ -302,7 +309,7 @@
                             </div>
 
                             <!-- Polaroid 4 -->
-                            <div class="polaroid relative -rotate-1 cursor-pointer group" onclick="openLightbox('image', '1000295914.jpg', 'Where Our Story Began 🌃')">
+                            <div class="polaroid relative -rotate-1 cursor-pointer group" onclick="openLightbox('image', 'photo3.jpg', 'Where Our Story Began 🌃')">
                                 <div class="w-8 sm:w-11 h-2 sm:h-2.5 absolute -top-1 left-1/2 -translate-x-1/2 rotate-2 z-10 washi-tape"></div>
                                 <div class="aspect-square w-full bg-parchment overflow-hidden relative flex items-center justify-center border border-blush/30">
                                     <img src="photo3.jpg" alt="Where Our Story Began" class="w-full h-full object-cover">
